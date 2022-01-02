@@ -138,7 +138,7 @@ include_directories(./inc)
 include_directories(./TOS_CONFIG)
 
 #aux_source_directory(./ SOURCE_FILES)
-aux_source_directory(./KEIL/mqtt_iot_explorer_tc_ch20_oled/demo/ SOURCE_FILES)
+aux_source_directory(./KEIL/mqtt_iot_explorer_tc_pm25/demo/ SOURCE_FILES)
 
 
 set(AS_SOURCE ${BASE_LOCATION}/arch/arm/arm-v7m/cortex-m0+/gcc/port_s.S
@@ -158,7 +158,7 @@ add_executable(${PROJECT_NAME}
 
 stm32_configure_linker_addresses(${PROJECT_NAME})
 
-target_link_libraries(${PROJECT_NAME} ${LIBS} c nosys)
+target_link_libraries(${PROJECT_NAME} ${LIBS} m c nosys)
 
 # Link optional libraries if available
 #if (${HAS_HARDWARE})
