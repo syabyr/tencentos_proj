@@ -54,7 +54,7 @@
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4107</DriverSelection>
+            <DriverSelection>4101</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
-          <Flash2>STLink\ST-LINKIII-KEIL_SWO.dll</Flash2>
-          <Flash3></Flash3>
+          <Flash2>BIN\UL2CM3.DLL</Flash2>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32G070xx,USE_HAL_DRIVER,STM32G070xx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\BSP\Inc;..\..\..\..\platform\vendor_bsp\st\STM32G0xx_HAL_Driver\Inc;..\..\..\..\platform\vendor_bsp\st\STM32G0xx_HAL_Driver\Inc\Legacy;..\..\..\..\platform\vendor_bsp\st\CMSIS\Device\ST\STM32G0xx\Include;..\..\..\..\platform\vendor_bsp\st\CMSIS\Include;..\..\..\..\arch\arm\arm-v7m\common\include;..\..\..\..\arch\arm\arm-v7m\cortex-m0+\armcc;..\..\..\..\kernel\core\include;..\..\..\..\kernel\pm\include;..\..\..\..\kernel\hal\include;..\..\..\..\osal\cmsis_os;..\..\TOS_CONFIG;..\..\..\..\net\at\include;..\..\..\..\net\tencent_firmware_module_wrapper;..\..\..\..\devices\esp8266_tencent_firmware;..\..\BSP\Hardware\CH20;..\..\BSP\Hardware\OLED</IncludePath>
+              <IncludePath>..\..\BSP\Inc;..\..\..\..\platform\vendor_bsp\st\STM32G0xx_HAL_Driver\Inc;..\..\..\..\platform\vendor_bsp\st\STM32G0xx_HAL_Driver\Inc\Legacy;..\..\..\..\platform\vendor_bsp\st\CMSIS\Device\ST\STM32G0xx\Include;..\..\..\..\platform\vendor_bsp\st\CMSIS\Include;..\..\..\..\arch\arm\arm-v7m\common\include;..\..\..\..\arch\arm\arm-v7m\cortex-m0+\armcc;..\..\..\..\kernel\core\include;..\..\..\..\kernel\pm\include;..\..\..\..\kernel\hal\include;..\..\..\..\osal\cmsis_os;..\..\TOS_CONFIG;..\..\..\..\net\at\include;..\..\..\..\net\tencent_firmware_module_wrapper;..\..\..\..\devices\esp8266_tencent_firmware;..\..\BSP\Hardware\CH20;..\..\BSP\Hardware\OLED;..\..\BSP\Hardware\E53_SC1;..\..\..\..\components\utils\JSON\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -352,7 +352,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
+            <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define></Define>
@@ -726,6 +726,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>tos/cmsis</GroupName>
+          <Files>
+            <File>
+              <FileName>cmsis_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\osal\cmsis_os\cmsis_os.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>tos/config</GroupName>
           <Files>
             <File>
@@ -739,9 +749,19 @@
           <GroupName>examples</GroupName>
           <Files>
             <File>
-              <FileName>mqtt_iot_explorer_tc_ch20_oled.c</FileName>
+              <FileName>cJSON.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\demo\mqtt_iot_explorer_tc_ch20_oled.c</FilePath>
+              <FilePath>..\..\..\..\components\utils\JSON\src\cJSON.c</FilePath>
+            </File>
+            <File>
+              <FileName>mqtt_iot_explorer_e53_light.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\demo\mqtt_iot_explorer_e53_light.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32g0xx_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\demo\stm32g0xx_key.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -784,14 +804,14 @@
           <GroupName>hardware</GroupName>
           <Files>
             <File>
-              <FileName>ch20_parser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\BSP\Hardware\CH20\ch20_parser.c</FilePath>
-            </File>
-            <File>
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\BSP\Hardware\OLED\oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>e53_sc1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\Hardware\E53_SC1\e53_sc1.c</FilePath>
             </File>
           </Files>
         </Group>
